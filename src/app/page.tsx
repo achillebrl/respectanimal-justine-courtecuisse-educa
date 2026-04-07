@@ -106,7 +106,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0 img-zoom-wrap">
           <Image
-            src="/assets/hero.jpg"
+            src="/assets/hero-new.jpg"
             alt="Justine Courtecuisse avec ses animaux"
             fill
             className="object-cover object-center"
@@ -653,7 +653,7 @@ export default function Home() {
       {/* ========== FULL-WIDTH PHOTO BANNER ========== */}
       <div className="relative h-64 md:h-96 overflow-hidden">
         <Image
-          src="/assets/hero.jpg"
+          src="/assets/quote-bg.jpg"
           alt="Nature et animaux"
           fill
           className="object-cover object-center"
