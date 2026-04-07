@@ -685,6 +685,177 @@ export default function Home() {
         </div>
       </div>
 
+
+      {/* ========== AVIS CLIENTS ========== */}
+      <section
+        id="avis"
+        className="py-28 md:py-36"
+        style={{ background: "var(--color-mist)" }}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          {/* Header */}
+          <div className="text-center mb-16" data-animate="fade-up">
+            <span className="section-badge">Témoignages</span>
+            <h2
+              className="font-[family-name:var(--font-cormorant)] text-[clamp(2.8rem,5vw,4.5rem)] font-light text-[var(--color-earth)] leading-tight mt-4 mb-4"
+            >
+              Ce que disent{" "}
+              <span className="italic text-[var(--color-terracotta)]">mes clients</span>
+            </h2>
+            {/* Rating summary */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="flex gap-1">
+                {[1,2,3,4,5].map((s) => (
+                  <svg key={s} className={`w-6 h-6 ${s <= 4 ? "text-[var(--color-terracotta)]" : "text-[var(--color-sand)]"}`} fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="font-[family-name:var(--font-cormorant)] text-3xl font-light text-[var(--color-earth)]">4,7</span>
+              <span className="font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth-light)] opacity-70">/ 5 · 71 avis Google</span>
+            </div>
+          </div>
+
+          {/* Reviews grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sixtine K.",
+                date: "Août 2025",
+                text: "Justine s'est occupée de notre chat pendant 1 mois. Nous avons apprécié les messages et vidéos rassurantes en notre absence. Justine est très rigoureuse et sérieuse. Tout est clair et bien pensé avant la prise en charge de notre animal.",
+                rating: 5,
+              },
+              {
+                name: "Ysmérie L.",
+                date: "Août 2025",
+                text: "Nous avons rencontré Justine pour un bilan comportemental avec notre Bengal Zarya, qui avait peur de mon compagnon. Grâce à ses précieux conseils et son accompagnement bienveillant, la relation entre eux s'est transformée. Je recommande vivement !",
+                rating: 5,
+              },
+              {
+                name: "Delphine S.",
+                date: "Août 2025",
+                text: "Je recommande Justine à 100 %. Partis 2 semaines en laissant nos 3 chats dont une de 15 ans sous médicaments, je n'étais pas rassurée. Justine a été d'une compétence et d'une bienveillance remarquables.",
+                rating: 5,
+              },
+              {
+                name: "Philippe Z.",
+                date: "Août 2025",
+                text: "Justine s'occupe de notre chat fréquemment depuis plus de 2 ans. Je la recommande fortement pour son sérieux, son professionnalisme, son investissement, sa bienveillance et sa gentillesse tant avec les animaux qu'avec leur maître.",
+                rating: 5,
+              },
+              {
+                name: "Valérie M.",
+                date: "Août 2025",
+                text: "Justine s'est occupée de mes deux chats cet été avec beaucoup d'attentions. Elle m'a partagé ses visites quotidiennes avec l'envoi de vidéos. Caresses, jeux, Justine est très attentionnée auprès de mes 2 loulous.",
+                rating: 5,
+              },
+              {
+                name: "Sylvain B.",
+                date: "Août 2025",
+                text: "Cela fait déjà quelques temps que nous sollicitons Justine pour ses services ! Elle offre un service de qualité et s'adapte aux contraintes exceptionnelles. Vraiment, je la recommande vivement !",
+                rating: 5,
+              },
+              {
+                name: "Anya O.",
+                date: "Août 2025",
+                text: "C'est la deuxième fois que nous faisons appel à Justine pour la garde de nos chats, et nous en sommes toujours aussi ravis. Elle nous envoie des nouvelles quotidiennes avec photos et vidéos — on part sereinement.",
+                rating: 5,
+              },
+              {
+                name: "Cyrille",
+                date: "Juin 2025",
+                text: "Justine est passée garder nos trois chats. Elle est ponctuelle, prend des photos et des vidéos, et tout est impeccable.",
+                rating: 5,
+              },
+              {
+                name: "Marie-Laure B.",
+                date: "Avril 2025",
+                text: "Justine a gardé nos deux chats à deux reprises. Elle est très sérieuse et bienveillante, envoie des photos et vidéos à chaque passage, et passe du temps pour des jeux et des câlins. Nous sommes partis en toute confiance.",
+                rating: 5,
+              },
+            ].map((review, i) => (
+              <div
+                key={i}
+                className="bg-[var(--color-warm-white)] p-7 flex flex-col gap-4"
+                style={{ borderRadius: "2px" }}
+                data-animate="fade-up"
+                data-delay={String(i * 60)}
+              >
+                {/* Stars */}
+                <div className="flex gap-1">
+                  {Array.from({ length: review.rating }).map((_, s) => (
+                    <svg key={s} className="w-4 h-4 text-[var(--color-terracotta)]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                {/* Text */}
+                <p className="font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth-light)] leading-relaxed flex-1 italic">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                {/* Author */}
+                <div className="flex items-center justify-between pt-3 border-t border-[var(--color-sand)]/20">
+                  <span className="font-[family-name:var(--font-cormorant)] text-base text-[var(--color-earth)] font-medium">
+                    {review.name}
+                  </span>
+                  <span className="font-[family-name:var(--font-lora)] text-xs text-[var(--color-earth-light)] opacity-50 tracking-wide">
+                    {review.date}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social links */}
+          <div className="mt-16 text-center" data-animate="fade-up">
+            <p className="font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth-light)] opacity-60 tracking-widest uppercase mb-6">
+              Retrouvez tous les avis &amp; actualités
+            </p>
+            <div className="flex items-center justify-center gap-6 flex-wrap">
+              <a
+                href="https://www.facebook.com/JustineCourtecuisseCoach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth)] hover:text-[var(--color-terracotta)] transition-colors group"
+              >
+                <div className="w-9 h-9 flex items-center justify-center transition-all duration-300 group-hover:scale-110" style={{ background: "var(--color-terracotta)", borderRadius: "2px" }}>
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
+                Facebook
+              </a>
+              <a
+                href="https://www.instagram.com/justine_courtecuisse/?hl=fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth)] hover:text-[var(--color-terracotta)] transition-colors group"
+              >
+                <div className="w-9 h-9 flex items-center justify-center transition-all duration-300 group-hover:scale-110" style={{ background: "var(--color-terracotta)", borderRadius: "2px" }}>
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  </svg>
+                </div>
+                Instagram
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCOARckpVCoHJsPQW3-owhpQ/featured"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-[family-name:var(--font-lora)] text-sm text-[var(--color-earth)] hover:text-[var(--color-terracotta)] transition-colors group"
+              >
+                <div className="w-9 h-9 flex items-center justify-center transition-all duration-300 group-hover:scale-110" style={{ background: "var(--color-terracotta)", borderRadius: "2px" }}>
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </div>
+                YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== CONTACT ========== */}
       <section
         id="contact"
